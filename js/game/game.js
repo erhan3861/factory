@@ -81,7 +81,7 @@ function startGame() {
 	}
 
 	AddGameObjects();
-	//drone = CreateDrone(objectSize);
+	drone = CreateDrone(objectSize);
 }
 
 function AddGameObjects()
@@ -98,8 +98,12 @@ function AddGameObjects()
 			{	
 			 	worldobjects.push(CreateGameObject(i, j, worldImageNumber, objectSize));
 			}
+			
 		}
 	}
+	
+	
+	
 }
 
 var gameArea = {
@@ -161,9 +165,6 @@ function updateGameArea() {
 
 	gameArea.clear();
 
-	//drone.animate();
-	//drone.update();
-
 	var worldobjectIndex = 0;
 
 	for(i = 0; i < 10; i++)
@@ -190,6 +191,9 @@ function updateGameArea() {
 			}
 		}
 	}
+
+	drone.animate();
+	drone.update();
 
 	if(jewelSignExist)
 	{

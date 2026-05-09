@@ -191,7 +191,7 @@ function Player(width, height, image, x, y) {
 	   		if(this.Direction == "right")
 	   		{
 	   		   this.normalImages = ["11", "11", "11", "11", "11", "11", "11", "11", "11", "11", "11", "11"];
-			   this.runningImages = ["11", "12", "13", "14" ,"15"];
+			   this.runningImages = ["11"]; //, "12", "13", "14" ,"15"
 			   this.normalImageIndex = 0;
 	   		   
 			   if(Math.round(this.x) < Math.round(this.Dest))
@@ -221,8 +221,8 @@ function Player(width, height, image, x, y) {
 
 			if(this.Direction == "left")
 	   		{
-			   this.normalImages = ["25", "25", "25", "25", "25", "25", "25", "25", "25", "25", "26", "27", "28"];
-			   this.runningImages = ["6", "7", "8", "9", "10"];
+			   this.normalImages = ["25", "25", "25", "25", "25", "25", "25", "25", "25", "25"]; //, "26", "27", "28"
+			   this.runningImages = ["6"];  //"7", "8", "9", "10"
 			   this.normalImageIndex = 0;
 
 			   if(Math.round(this.x) > Math.round(this.Dest))
@@ -253,7 +253,7 @@ function Player(width, height, image, x, y) {
 			if(this.Direction == "up")
 	   		{
 	   		   this.normalImages = ["16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16"];
-			   this.runningImages = ["16", "17", "18", "19", "20"];
+			   this.runningImages = ["16"]; //, "17", "18", "19", "20"
 			   this.normalImageIndex = 0;
 
 			   if(Math.round(this.y) > Math.round(this.Dest))
@@ -283,8 +283,8 @@ function Player(width, height, image, x, y) {
 
 			if(this.Direction == "down")
 	   		{
-	   		   this.normalImages = ["21", "21", "21", "21", "21", "21", "21", "21", "21", "21", "22", "23", "24"];
-			   this.runningImages = ["1", "2", "3", "4", "5"];
+	   		   this.normalImages = ["21", "21", "21", "21", "21", "21", "21", "21", ]; //"21", "21", "22", "23", "24"
+			   this.runningImages = ["1"]; //, "2", "3", "4", "5"
 			   this.normalImageIndex = 0;
 
 			   if(Math.round(this.y) < Math.round(this.Dest))
@@ -429,9 +429,8 @@ function CreatePlayer(objectSize)
 	if(player.Direction == "left")
 	{		
 		player.normalImages = ["25", "25", "25", "25", "25", "25", "25", "25", "25", "25", 
-							   "25", "25", "25", "25", "25", "25", "25", "25", "25", "25", 
-							   "26", "26", "26", "26", "26", "26", "26", "26", "26", "27", "27", "27", "28", "28", "28"];
-		player.runningImages = ["6", "7", "8", "9", "10"];
+							   "25", "25", "25", "25", "25", "25", "25", "25", "25", "25"];//, "26", "26", "26", "26", "26", "26", "26", "26", "26", "27", "27", "27", "28", "28", "28"
+		player.runningImages = ["6"]; //, "7", "8", "9", "10"
 		player.normalImageIndex = 0;
 	}
 	else if(player.Direction == "right")
@@ -444,14 +443,14 @@ function CreatePlayer(objectSize)
 	{
 		player.normalImages = ["21", "21", "21", "21", "21", "21", "21", "21", "21", "21",
 							   "21", "21", "21", "21", "21", "21", "21", "21", "21", "21", 
-							   "22", "22", "22", "22", "22", "22", "22", "22", "22", "23", "23", "23", "24", "24", "24"];
+							   "22", "22", "22", "22", "22", "22", "22", "22"]; //, "22", "23", "23", "23", "24", "24", "24"
 		player.runningImages = ["1"]; // , "2", "3", "4", "5"
 		player.normalImageIndex = 0;
 	}
 	else if(player.Direction == "up")
 	{
 		player.normalImages = ["16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16", "16"];
-		player.runningImages = ["16", "17", "18", "19", "20"];
+		player.runningImages = ["16"]; //"17", "18", "19", "20"
 		player.normalImageIndex = 0;
 	}
 
@@ -535,7 +534,7 @@ function CreateStartPosition(objectSize)
 function CreateDrone(objectSize)
 {
 	var starSize = objectSize;
-	var drone = new AnimatedObject(starSize, starSize, "images/animatedobjects/drone/object1.png", gameArea.canvas.width * 0.75, 100, "drone");
+	var drone = new AnimatedObject(starSize, starSize, "images/animatedobjects/drone/object1.png", gameArea.canvas.width * 0.75, 50, "drone");
 	drone.images = [
 					"1",
 					"2",
