@@ -1,0 +1,34 @@
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+}
+
+.sidebar a {
+  padding: 8pt 8pt 8pt 32pt;
+  text-decoration: none;
+  font-size: large;
+  color: #000;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #000;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25pt;
+  font-size: 36pt;
+  margin-left: 50pt;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450pt) {
+  .sidebar {padding-top: 15pt;}
+  .sidebar a {font-size: 18pt;}
+}

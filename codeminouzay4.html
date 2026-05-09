@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeMino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="shortcut icon" type="image/x-icon" href="images/monkey1.ico"/>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/commandButtons.css">
+  <link rel="stylesheet" href="css/container.css">
+  <link rel="stylesheet" href="css/lang.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/sidepanel.css">
+  <link rel="stylesheet" href="css/sidepanelLeft.css">
+  <link rel="stylesheet" href="css/bottompanel.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/blockly/blockly_uncompressed.js"></script>
+  <script src="js/blockly/generators/javascript.js"></script>
+  <script src="js/blockly/generators/javascript/logic.js"></script>
+  <script src="js/blockly/generators/javascript/loops.js"></script>
+  <script src="js/blockly/generators/javascript/math.js"></script>
+  <script src="js/blockly/generators/javascript/text.js"></script>
+  <script src="js/blockly/generators/javascript/lists.js"></script>
+  <script src="js/blockly/generators/javascript/colour.js"></script>
+  <script src="js/blockly/generators/javascript/variables.js"></script>
+  <script src="js/blockly/generators/javascript/variables_dynamic.js"></script>
+  <script src="js/blockly/generators/javascript/procedures.js"></script>
+  <script src="js/blockly/generators/python.js"></script>
+  <script src="js/blockly/generators/python/logic.js"></script>
+  <script src="js/blockly/generators/python/loops.js"></script>
+  <script src="js/blockly/generators/python/math.js"></script>
+  <script src="js/blockly/generators/python/text.js"></script>
+  <script src="js/blockly/generators/python/lists.js"></script>
+  <script src="js/blockly/generators/python/colour.js"></script>
+  <script src="js/blockly/generators/python/variables.js"></script>
+  <script src="js/blockly/generators/python/variables_dynamic.js"></script>
+  <script src="js/blockly/generators/python/procedures.js"></script>
+  <script src="js/blockly/msg/messages.js"></script>
+  <script src="js/blockly/blocks/extensions.js"></script>
+  <script src="js/blockly/blocks/logic.js"></script>
+  <script src="js/blockly/blocks/loops.js"></script>
+  <script src="js/blockly/blocks/math.js"></script>
+  <script src="js/blockly/blocks/text.js"></script>
+  <script src="js/blockly/blocks/lists.js"></script>
+  <script src="js/blockly/blocks/colour.js"></script>
+  <script src="js/blockly/blocks/variables.js"></script>
+  <script src="js/blockly/blocks/variables_dynamic.js"></script>
+  <script src="js/blockly/blocks/procedures.js"></script>
+  <script src="js/blockly/blocks/pxt_blockly_functions.js"></script>
+  <script src="js/blockly/blocks/test_blocks.js"></script>
+  <script src="js/blockly/blocks/pxt_test_blocks.js"></script>
+  <script src="js/tr.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/acorn.js"></script>
+  <script src="js/interpreter.js"></script>
+  <script src="js/assetmanager.js"></script>
+  <script src="editorsrc/ace.js"></script>
+  <script src="editorsrc/ext-language_tools.js"></script>
+
+  <script src="js/game/messages.js"></script>
+  <script src="js/game/codeedit.js"></script>
+  <script src="js/game/workspaces4.js"></script>
+  <script src="js/game/infomessage.js"></script>
+  <script src="https://kit.fontawesome.com/bc06efbf60.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
+
+  <script type="text/javascript">
+  	var pageName = "codeminouzay4";
+  	var levelcount = "10";
+  	var lang = String(window.location).split("?")[2];
+
+		$(function () {
+	  	$('[data-toggle="tooltip"]').tooltip()
+		})
+  </script>
+
+</head>
+
+<body onload="onLoadPage()">
+	
+<!--CSS Spinner-->
+	<div class="spinner-wrapper">
+		<div class="spinner">
+			  <div class="rect1"></div>
+			  <div class="rect2"></div>
+			  <div class="rect3"></div>
+			  <div class="rect4"></div>
+			  <div class="rect5"></div>
+		</div>
+	</div>
+<div class="bg">
+<div>
+    <audio autoplay hidden loop id="bgsound">
+     	<!--<source src="media/nightwinds.mp3" type="audio/mp3">-->
+    </audio>
+</div>
+
+<div class="container-fluid">
+
+	<div class="row text-center" style="background-color:transparent; color:white; font-weight: bold;" id="pageHeader">
+		<div class="col-sm-2"> 
+			<div class="img"><a href="#"><img src="images/logo3.png" class="img-fluid" alt="Logo"></a></div>
+		</div>
+
+	 	<div class="col-sm-1">
+
+	 	</div>
+
+	 	<div class="col-sm-5" style="text-align: left;">
+	 		<!-- <div class="pagination" style="font-size: x-large;">
+			  <a href="#" onClick="GotoPage('01');" id="pgn01">1</a>
+			  <a href="#" onClick="GotoPage('02');" id="pgn02">2</a>
+			  <a href="#" onClick="GotoPage('03');" id="pgn03">3</a>
+			  <a href="#" onClick="GotoPage('04');" id="pgn04">4</a>
+			  <a href="#" onClick="GotoPage('05');" id="pgn05">5</a>
+			  <a href="#" onClick="GotoPage('06');" id="pgn06">6</a>
+			  <a href="#" onClick="GotoPage('07');" id="pgn07">7</a>
+			  <a href="#" onClick="GotoPage('08');" id="pgn08">8</a>
+			  <a href="#" onClick="GotoPage('09');" id="pgn09">9</a>
+			  <a href="#" onClick="GotoPage('10');" id="pgn10">10</a>
+			</div> -->
+	 	</div>
+
+	 	<div class="col-sm-2" id="lbTitle" style="font-size: x-large; padding-top: 5px; text-align: left;">
+
+	 	</div>
+
+	 	<div class="col-sm-2">
+		 	<div class="row">
+
+		 		<div class="col-sm-6">
+			 	    	
+			 	</div>
+
+			 	<div class="col-sm-3">
+			 		<div>
+					  <div>
+						<ul class="list-unstyled list-inline">
+						  <li class="ct-language"> <img src="images/flags/tr.png" alt="Turkish" id = "comboImg">
+							<ul class="list-unstyled ct-language__dropdown">
+							  <li><a href="#" class="lang-tr lang-select" data-lang="tr"><img src="images/flags/tr.png" alt="Turkish"></a></li>
+							  <li><a href="#" class="lang-en lang-select" data-lang="en"><img src="images/flags/en.png" alt="English"></a></li>
+							  <li><a href="#" class="lang-az lang-select" data-lang="az"><img src="images/flags/az.png" alt="Azeri"></a></li>
+                <li><a href="#" class="lang-de lang-select" data-lang="de"><img src="images/flags/de.png" alt="German"></a></li>
+							</ul>
+						  </li>
+						</ul>
+					  </div>
+					</div>		
+			 	</div>
+	 		</div>
+	 	</div>
+	</div>
+
+	<div class="row">	
+		<div class="col-sm-5" id="leftSide">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="BlocksPannel" class="sidebar">
+					  	
+						<!-- Tab links -->
+						<div class="tab">
+						  <button class="btn buttonBlockly tablinks active" onclick="openTab(event, 'Blockly')"></button>
+						  <button class="btn buttonPython tablinks" onclick="openTab(event, 'Python')"></button>
+						  <button class="btn buttonJavaScript tablinks" onclick="openTab(event, 'JavaScript')"></button>
+						</div>
+						<!-- Tab content -->
+						<div id="Blockly" class="tabcontent">
+						  <div id="blocklyDiv"></div>
+						</div>
+
+
+						<div id="JavaScript" class="tabcontent">
+							<div class="row">
+									<div id="JSButtons" class="col-sm-3" style="background-color: #696969;">									
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="JavaScriptBtClick('start');" id="btnJSStart">Başla</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="JavaScriptBtClick('Walk');" id="btnJSWalkForward">İlerle</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="JavaScriptBtClick('TurnToRight');" id="btnJSTurnRight">Sağa Dön</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="JavaScriptBtClick('TurnToLeft');" id="btnJSTurnLeft">Sola Dön</button>
+										</div>						
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%;" onclick="JavaScriptBtClick('BreakRock');" id="btnJSSmash">Parçala</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%;" onclick="JavaScriptBtClick('CollectCrystal');" id="btnJSCollect">Topla</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn loopCommandButton" style="width: 100%;" onclick="JavaScriptBtClick('loop');" id="btnJSLoop">Döngü</button>
+										</div>
+									</div>
+								<div class="col-sm-9" style="padding: 0px; margin: 0px;">
+									<pre id="editorJavaScript"></pre>
+								</div>
+							</div>
+						</div>
+
+						<div id="Python" class="tabcontent">
+						  	<div class="row">
+								<div id="PythonButtons" class="col-sm-3" style="background-color: #696969;">									
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="PythonBtClick('start');" id="btnPYStart">Başla</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="PythonBtClick('Walk');" id="btnPYWalkForward">İlerle</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="PythonBtClick('TurnToRight');" id="btnPYTurnRight">Sağa Dön</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%" onclick="PythonBtClick('TurnToLeft');" id="btnPYTurnLeft">Sola Dön</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%;" onclick="PythonBtClick('BreakRock');" id="btnPYSmash">Parçala</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn moveCommandButton" style="width: 100%;" onclick="PythonBtClick('CollectCrystal');" id="btnPYCollect">Topla</button>
+										</div>
+										<div class="row" style="margin: 10px;">
+											<button type="button" class="btn loopCommandButton" style="width: 100%;" onclick="PythonBtClick('loop');" id="btnPYLoop">Döngü</button>
+										</div>
+									</div>
+								<div class="col-sm-9" style="padding: 0px; margin: 0px;">
+									<pre id="editorPython"></pre>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+			  </div>
+			</div>
+		</div>
+		<div class="col-sm-7" id="rightSide">
+				<div class="row">
+						<div class="col-sm-12">
+							<div class="outer" id="divOuterGameArea">
+							  <div class="middle">
+							    <div class="inner" id="divGameArea">
+
+							    </div>
+							  </div>
+							</div>
+						</div>
+
+				    <div class="panel-wrapper" id="infopanel">
+				        <div class="panel-controller">
+				                <div class="tab-controller">x</div>
+						    </div><!-- panel-controller -->
+							<div class="panel-content">
+								<div style="text-align: center;">
+								   <div class="row">
+									<div class="col-sm-12">
+										<img src="images/info-panel.png" style="width: 100%;"/>
+										<div class="centered" id="messageInfoBody" style="font-size: medium; margin-left: 3vw;">Centered</div>
+									</div>
+								   </div>
+								</div><!-- content -->
+							</div><!-- panel-content -->
+						</div><!-- panel-wrapper -->
+				</div>
+
+				<div id="mySidenav" class="sidenav">
+					<div class="row">
+						<!-- <div class="col-md-12">
+							<button type="button" class="btn menuButton" id="buttonMainPage" onClick="GotoHome();" data-toggle="tooltip" data-placement="bottom" title="Ana Sayfa">
+							 	<img src="images/home.png" width="100%"> 
+						 	</button>
+						</div> -->
+						<div class="col-md-12">
+						   <button type="button" class="btn menuButton" id="buttonPlaySound" onClick="PlaySound();" data-toggle="tooltip" data-placement="bottom" title="Ses Aç/Kapa">
+							 <img src="images/soundon.png" width="100%"  id="btPlaySound">
+						   </button>
+						</div>
+						<div class="col-md-12">
+							<button type="button" class="btn menuButton" id="buttonSetSpeed" onClick="SetSpeed();" data-toggle="tooltip" data-placement="bottom" title="Oyun Hızı">
+								<img src="images/speed1.png" width="100%" id="btSetSpeed">
+							</button>	
+						</div>
+						<!-- <div class="col-md-12">
+							<button type="button" class="btn menuButton" id="buttonFullScreen" onClick="FullScreenGame();" data-toggle="tooltip" data-placement="bottom" title="Tam Ekran">
+								<img src="images/fullscreen.png" width="100%" id="btFullScreen">
+							</button>
+						</div> -->
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<img class="runButton" onclick="btRunCodeClick();" id="btRunCode"/>
+
+<!-- Success Modal -->
+<div id="messageSuccessModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal content-->
+	    <div class="modal-content" style="background-color: transparent;">
+	      <div class="modal-body">,
+	      	<div class="container">
+	        	<img src="images/success/tr-3star.png" alt="success" width="100%" id="messageSuccessModalImage">
+				<!-- <button type="button" class="btn left repeatLevelButton" id="btSuccessRepeat" data-dismiss="modal" ></button>
+	        	<button type="button" class="btn right nextLevelButton" id="btnSuccessNext"></button> -->
+			</div>
+	      </div>
+	  	</div>
+	</div>
+</div>
+<!-- -->
+
+<!-- Error Modal -->
+<div id="messageErrorModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <!-- Modal content-->
+    	<div class="modal-content" style="background-color: transparent;">
+	      <div class="modal-body">,
+	      	<div class="container">
+	        	<img src="images/error/tr-error.png" alt="success" width="100%" id="messageErrorModalImage">
+				<button type="button" class="btn repeatLevelButton" id="btnErrorOkey" data-dismiss="modal" ></button>
+			</div>
+	      </div>
+  		</div>
+	</div>
+</div>
+<!-- -->
+
+<xml xmlns="https://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+	<block type="start"></block><block type="walk"></block>
+	<block type="turn_right"></block>
+	<block type="turn_left"></block>
+	<block type="smash_stone"></block>
+	<block type="collect_jewel"></block>
+	<block type="for_dongusu"></block>
+</xml>
+
+
+<xml xmlns="https://www.w3.org/1999/xhtml" id="workspaceBlocks" style="display:none"></xml>
+
+<script src="js/blockly/blocks/blockscripts.js"></script>
+<script src="js/blockly/generators/javascript/blockscripts.js"></script>
+<script src="js/blockly/generators/python/blockscripts.js"></script>
+<script src="js/game/appearance.js"></script>
+<script src="js/game/python_js_converter.js"></script>
+<script src="js/game/blocklyworkspace.js"></script>
+<script src="js/game/gameobjects.js"></script>
+<script src="js/game/game.js"></script>
+
+</div>
+</body>
+</html>

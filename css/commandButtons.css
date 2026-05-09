@@ -1,0 +1,38 @@
+.moveCommandButton {
+    margin: 1px; 
+    padding:1px;
+    background-color: #3b96ea; 
+    color: white; 
+    font-size: 0.9vw; 
+    font-family: 'Exo 2', sans-serif;  
+    width: 3vw; 
+    height: 2vw;
+    z-index: 101;
+    font-style: normal;
+}
+
+.loopCommandButton {
+    margin: 1px; 
+    padding:1px;
+    background-color: #ffab19; 
+    color: white; 
+    font-size: 0.9vw; 
+    font-family: 'Exo 2', sans-serif;  
+    width: 3vw; 
+    height: 2vw;
+    z-index: 101;
+    font-style: normal;
+}
+
+.logicCommandButton {
+    margin: 1px; 
+    padding:1px;
+    background-color: #5b80a5; 
+    color: white; 
+    font-size: 0.9vw; 
+    font-family: 'Exo 2', sans-serif;  
+    width: 3vw; 
+    height: 2vw;
+    z-index: 101;
+    font-style: normal;
+}

@@ -1,0 +1,618 @@
+{ margin: 0; padding: 0;}
+
+@font-face {
+  font-family: 'Exo 2';
+  src: url("..//fonts/exo_2/Exo2-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #fff;
+  font-family: 'Exo 2', sans-serif;
+  background-size:auto;
+  background-repeat: no-repeat;
+}
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+    border-style: none;
+}
+
+.bg {
+  /* The image used */
+  background: url('../images/background.png'); 
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blocklySvg {
+  background: rgba(255, 255, 255, 1);
+}
+
+canvas {
+  background-color: transparent;
+  z-index:200;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  /* Whatever width you want */
+}
+
+.alert{
+  display:none;
+}
+
+.pagination {
+    display: inline-block;
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.pagination a {
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #c6302c;
+}
+
+.dot {
+  height: 2vw;
+  width: 2vw;
+  background-color: #fefefe;
+  border-radius: 50%;
+  display: inline-block;
+  border-color:#c6cacd;
+  border-style:solid;
+  border-width:2px;
+  font-weight:bold;
+  font-size:larger;
+  color:black;
+  cursor: pointer;
+  text-align:center;
+  margin-left: 0.2vw;
+}
+
+.dot:hover {
+  background-color: #ffa400;
+  border-color:#c6cacd;
+  border-style:solid;
+  border-width:2px;
+  color:black;
+  cursor: pointer;
+}
+
+.runButton{
+  content: url('../images/runcode.png');
+  width: 5vw; 
+  visibility: visible;
+  position: absolute; 
+  border-style: none;
+  border-width: 0px;
+  z-index: 101;
+  cursor: pointer;
+}
+
+.repeatButton
+{
+  content: url('../images/repeatcode.png');
+  width: 5vw; 
+  visibility: visible;
+  position: absolute; 
+  border-style: none;
+  border-width: 0px;
+  z-index: 101;
+  cursor: pointer;
+}
+
+.codeButton{
+  margin:1px;
+  background-color: #2dfe32; 
+  color: #0d277d; 
+  font-size: 1vw; 
+  font-family: 'Exo 2', sans-serif; 
+  width: 9vw;  
+}
+
+.blockButton{
+  margin:1px;
+  background-color: #fafe32; 
+  color: #0d277d; 
+  font-size: 1vw; 
+  font-family: 'Exo 2', sans-serif; 
+}
+
+.imageButtonInfo
+{
+  background: url('../images/bilgemaymun.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  width: 3vw; 
+  height: 3vw;
+  margin: 10px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+} 
+
+.imageJewel
+{
+  width: 30px; 
+  height: 30px;
+}
+
+.modalButton
+{
+  margin:1px; 
+  color: white; 
+  font-size: 1vw;
+  font-family: "Exo 2", cursive, sans-serif;
+  border-width: 1px;
+  border-color: white;
+  width: 8vw; 
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modalButtonInfo
+{
+  margin:1px; 
+  color: white; 
+  font-size: 1.5vw;
+  font-family: "Exo 2", cursive, sans-serif;
+  border-width: 1px;
+  border-color: white;
+  width: 10vw; 
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.repeatLevelButton
+{
+  background: url('../images/repeatlevel.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  width: 3.7vw; 
+  height: 3vw;
+}
+
+.nextLevelButton
+{
+  background: url('../images/nextlevel.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  width: 3.7vw; 
+  height: 3vw;
+}
+
+.modal-header
+{
+  border-style: none; 
+  color: white;
+  background-color: #6cc9de;
+}
+
+.modal-footer
+{
+  border-style: none; 
+  color: white;
+  background-color: #6cc9de;
+}
+
+.popUpHeader
+{
+  font-size: 1.8vw;
+  color: white;
+  text-align: center;
+  font-style: normal;
+  font-family: "Exo 2";
+  overflow-y: auto;
+  max-height: 8vw;
+}
+
+.infoTitle1
+{
+  text-align:center; 
+  font-size: 1.3vw;
+  font-family: "Exo 2", cursive, sans-serif;
+  color: white;
+  font-weight: bold;
+}
+
+.infoTitle2
+{
+  text-align:center; 
+  font-size: 1.3vw;
+  font-family: "Exo 2", cursive, sans-serif;
+  color: white;
+  font-weight: bold;
+}
+
+.infoHeader
+{
+  font-size: 1.3vw;
+  color: white;
+  text-align: center;
+  font-style: normal;
+  font-family: "Exo 2", cursive, sans-serif;
+  overflow-y: auto;
+  max-height: 180px;
+}
+
+.infoBody
+{
+  text-align:center; 
+  font-size: 1vw;
+  font-family: "Exo 2", cursive, sans-serif;
+  color: white;
+  font-weight: bold;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.infoExp
+{
+  font-size: large;
+  color: white;
+  text-align: center;
+}
+
+.codeDiv
+{
+  color: black;
+  padding: 20px;
+  font-family: "Exo 2", cursive, sans-serif;
+  font-size: medium;
+}
+
+.blocklyDiv
+{
+  color: white;
+  padding: 1px;
+  font-family: "Exo 2", cursive, sans-serif;
+  font-size: 2vw;
+  color: black;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #41c6cf; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #41c6cf; 
+}
+
+/*Loader*/
+
+.spinner {
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  font-size: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.spinner > div {
+  background-color: #fff;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #26136d;
+  z-index: 999999;
+}
+
+.tab
+{
+  padding: 10px;
+}
+
+.tablinks
+{
+  
+}
+
+/* Change background color of buttons on hover */
+.buttonBlockly {
+    margin: 1px; 
+    padding:1px;
+    width: 6.5vw; 
+    height: 3vw;
+    z-index: 101;
+    background: url('../images/buttons/block.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.buttonBlockly:hover {
+  opacity: 0.8;
+}
+
+.buttonPython {
+    margin: 1px; 
+    padding:1px;
+    width: 6.5vw; 
+    height: 3vw;
+    z-index: 101;
+    background: url('../images/buttons/python.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.buttonPython:hover {
+  opacity: 0.8;
+}
+
+.buttonJavaScript {
+    margin: 1px; 
+    padding:1px;
+    width: 6.5vw; 
+    height: 3vw;
+    z-index: 101;
+    background: url('../images/buttons/js.png');
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.buttonJavaScript:hover {
+  opacity: 0.8;
+}
+
+.buttonLanguage {
+    text-align: left;
+    margin: 1px; 
+    padding:1px;
+    background-color: #001d26; 
+    color: #eee; 
+    font-size: 0.8vw; 
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;    
+    width: 6vw; 
+    height: 3vw;
+    z-index: 101;
+}
+
+.buttonWhite {
+    position: absolute; 
+    margin: 1px; 
+    padding:1px;
+    background-color: #eee; 
+    color: #101010; 
+    font-size: 0.8vw; 
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;   
+    width: 3vw; 
+    height: 2vw;
+    z-index: 101;
+}
+
+.buttonDark {
+    position: absolute; 
+    margin: 1px; 
+    padding:1px;
+    background-color: #101010; 
+    color: #eee; 
+    font-size: 0.8vw; 
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;   
+    width: 3vw; 
+    height: 2vw;
+    z-index: 101;
+}
+
+.buttonDark:hover
+{
+  color:#ff3333;
+}
+
+.buttonWhite:hover
+{
+  color:#ff3333;
+}
+
+.menuButton:hover
+{
+  opacity: 0.8;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  color: #ff3333;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  color: #ff3333;
+}
+
+.tab button.active:hover {
+  color: #ff3333;
+}
+
+.ace_editor {
+  border: 1px solid lightgray;
+  margin: auto;
+  width: 100%;
+}
+
+
+/* Blockly*/
+
+#importExport {
+  font-family: monospace;
+}
+
+.ioLabel>.blocklyFlyoutLabelText {
+  font-style: italic;
+}
+
+.blocklyFlyoutLabelText {
+  fill: white !important;
+}
+.blocklyFlyoutHeading>.blocklyFlyoutLabelText {
+  font-size: 1.5rem;
+}
+line.blocklyFlyoutLine {
+  stroke: white;
+}
+.blocklyFlyoutLabelIcon {
+  font-family: 'Font Awesome\ 5 Free';
+  font-size: 1.5rem;
+  font-weight: 900;
+  fill: white;
+}
+
+.blocklyTreeRow {
+  height: 45px !important;
+}
+
+.blocklyTreeIconCustom {
+  background: none !important;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0 .3em;
+  padding: 0.2em;
+  width: 30px !important;
+  height: 100% !important;
+  line-height: 45px;
+  min-height: 45px;
+  vertical-align: middle;
+}
+.blocklyTreeIconCustom::before {
+  content: "\f12e";
+}
+.blocklyTreeIconCustom.logic::before {
+  content: "\f074";
+}
+.blocklyTreeIconCustom.loops::before {
+  content: "\f01e";
+}
+.blocklyTreeIconCustom.math::before {
+  content: "\f1ec";
+}
+.blocklyTreeIconCustom.text::before {
+  content: "\f031";
+}
+.blocklyTreeIconCustom.lists::before {
+  content: "\f0ca";
+}
+.blocklyTreeIconCustom.colour::before {
+  content: "\f53f";
+}
+.blocklyTreeIconCustom.variables::before {
+  content: "\f0c9";
+}
+.blocklyTreeIconCustom.functions::before {
+  content: "\f141";
+}
